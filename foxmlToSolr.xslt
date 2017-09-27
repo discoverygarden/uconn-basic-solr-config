@@ -24,10 +24,9 @@
             exclude-result-prefixes="exts"
   xmlns:encoder="xalan://java.net.URLEncoder"
   xmlns:java="http://xml.apache.org/xalan/java"
-  xmlns:dgi-e="xalan://ca.discoverygarden.gsearch_extensions">
-  <!--  Used for indexing other objects.
+  xmlns:dgi-e="xalan://ca.discoverygarden.gsearch_extensions"
   xmlns:sparql="http://www.w3.org/2001/sw/DataAccess/rf1/result"
-  xmlns:xalan="http://xml.apache.org/xalan"> -->
+  xmlns:xalan="http://xml.apache.org/xalan">
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
@@ -115,13 +114,11 @@
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/slurp_XML_converted_JSON_to_solr.xslt"/>
   <!--<xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/or_transcript_solr.xslt"/>-->
   <!--<xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/vtt_solr.xslt"/>-->
-  <!--  Used for indexing other objects.
+  <!--  Used for indexing other objects.-->
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/library/traverse-graph.xslt"/>
-  -->
   <!-- Used to index the list of collections to which an object belongs.
-    Requires the "traverse-graph.xslt" bit as well.
+    Requires the "traverse-graph.xslt" bit as well.-->
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/hierarchy.xslt"/>
-  -->
 
   <!-- Decide which objects to modify the index of -->
   <xsl:template match="/">
