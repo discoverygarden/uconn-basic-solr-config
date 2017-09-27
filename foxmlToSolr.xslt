@@ -275,7 +275,7 @@
         reindexing all the descendents whenever indexing an object
         (updating a collection label would be fairly expensive if we blindly
         reindexed). -->
-      <!--
+  
       <xsl:variable name="ancestors">
         <xsl:call-template name="get-ancestors">
           <xsl:with-param name="PID" select="$PID" />
@@ -285,7 +285,6 @@
       <xsl:for-each select="xalan:nodeset($ancestors)//sparql:obj[@uri != concat('info:fedora/', $PID)]">
         <field name="ancestors_ms"><xsl:value-of select="substring-after(@uri, '/')"/></field>
       </xsl:for-each>
-      -->
 
     </doc>
   </xsl:template>
