@@ -28,6 +28,8 @@
       <xsl:with-param name="pid" select="../../@PID"/>
       <xsl:with-param name="datastream" select="../@ID"/>
     </xsl:apply-templates>
+    <xsl:apply-templates mode="cths_mods_extensions" select="$content//mods:mods[1]"/>
+    <xsl:apply-templates mode="cths_mods_extensions_all_suffix" select="$content//mods:mods[1]"/>
   </xsl:template>
 
   <!-- Handle dates. -->

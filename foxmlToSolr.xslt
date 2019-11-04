@@ -120,6 +120,10 @@
     Requires the "traverse-graph.xslt" bit as well.-->
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/hierarchy.xslt"/>
 
+  <!-- Custom slurps for CTHS. -->
+  <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/cths_MODS_slurp_extensions.xslt"/>
+  <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/cths_MODS_slurp_extensions_all_suffix.xslt"/>
+
   <!-- Decide which objects to modify the index of -->
   <xsl:template match="/">
     <update>
