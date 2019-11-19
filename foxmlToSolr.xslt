@@ -122,6 +122,7 @@
 
   <!-- Custom slurps for CTHS. -->
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/cths_MODS_slurp_extensions.xslt"/>
+  <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/cths_MADS_slurp_extensions.xslt"/>
   <xsl:include href="/usr/local/fedora/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms/cths_MODS_slurp_extensions_all_suffix.xslt"/>
 
   <!-- Decide which objects to modify the index of -->

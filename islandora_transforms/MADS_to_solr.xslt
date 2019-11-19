@@ -9,6 +9,7 @@
     <xsl:param name="prefix">MADS_</xsl:param>
     <xsl:param name="suffix">_ms</xsl:param>
 
+    <xsl:apply-templates mode="cths_mads_extensions" select="$content//mads:mads[1]"/>
 
     <xsl:for-each select="$content//mads:authority/mads:name[@type='personal']">
       <xsl:variable name="GIVEN" select="./mads:namePart[@type = 'given']"/>
