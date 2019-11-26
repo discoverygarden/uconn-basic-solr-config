@@ -54,8 +54,8 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Author and Creator field. -->
-  <xsl:template match="mods:mods/mods:name[@type = 'personal' or @type = 'corporate'][mods:role/mods:roleTerm[.= 'Creator'] or mods:role/mods:roleTerm[.= 'Author']]" name="name_creator_template" mode="cths_mods_extensions">
+  <!-- Creator field. -->
+  <xsl:template match="mods:mods/mods:name[@type = 'personal' or @type = 'corporate'][mods:role/mods:roleTerm[.= 'Creator']]" name="name_creator_template" mode="cths_mods_extensions">
     <xsl:variable name="name_creator">
       <xsl:call-template name="cths_parse_name"/>
     </xsl:variable>
