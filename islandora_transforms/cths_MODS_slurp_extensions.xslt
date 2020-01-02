@@ -103,6 +103,30 @@
     </xsl:call-template>
   </xsl:template>
 
+  <!-- Library call number field. -->
+  <xsl:template match="mods:mods/mods:classification[@authority = 'local'][@displayLabel = 'Library call number']" mode="cths_mods_extensions">
+    <xsl:call-template name="cths_write_field">
+      <xsl:with-param name="field" select="'library_call_number'"/>
+      <xsl:with-param name="content" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- LC type call number field. -->
+  <xsl:template match="mods:mods/mods:classification[@authority = 'local'][@displayLabel = 'LC-type call number']" mode="cths_mods_extensions">
+    <xsl:call-template name="cths_write_field">
+      <xsl:with-param name="field" select="'lc_type_call_number'"/>
+      <xsl:with-param name="content" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- Koha identifier field. -->
+  <xsl:template match="mods:mods/mods:recordInfo/mods:recordIdentifier[@source = 'koha']" mode="cths_mods_extensions">
+    <xsl:call-template name="cths_write_field">
+      <xsl:with-param name="field" select="'koha_identifier'"/>
+      <xsl:with-param name="content" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:template>
+
   <!-- Template to write titles. -->
   <xsl:template name="cths_parse_title">
     <xsl:param name="include_nonSort" select="true()"/>
