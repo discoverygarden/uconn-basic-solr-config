@@ -127,6 +127,22 @@
     </xsl:call-template>
   </xsl:template>
 
+  <!-- Date created (qualified) field. -->
+  <xsl:template match="mods:mods/mods:originInfo/mods:dateCreated[not(@encoding)]" mode="cths_mods_extensions">
+    <xsl:call-template name="cths_write_field">
+      <xsl:with-param name="field" select="'date_created_no_encoding'"/>
+      <xsl:with-param name="content" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- Date issued (qualified) field. -->
+  <xsl:template match="mods:mods/mods:originInfo/mods:dateIssued[not(@encoding)]" mode="cths_mods_extensions">
+    <xsl:call-template name="cths_write_field">
+      <xsl:with-param name="field" select="'date_issued_no_encoding'"/>
+      <xsl:with-param name="content" select="normalize-space(.)"/>
+    </xsl:call-template>
+  </xsl:template>
+
   <!-- Template to write titles. -->
   <xsl:template name="cths_parse_title">
     <xsl:param name="include_nonSort" select="true()"/>
