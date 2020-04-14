@@ -296,11 +296,12 @@
    <field name="PID" type="string" indexed="true" stored="true" required="true"/>
 
    <field name="PID_kw" type="text_keyword" indexed="true" stored="true" multiValued="false"/>
+   <field name="cths_mods_subject_all_ms" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="cths_mods_subject_all_mt" type="text" indexed="true" stored="true" multiValued="true"/>
 
    <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
    <field name="catch_all_fields_mt" type="text" indexed="true" stored="false" multiValued="true"/>
-
    <!-- Here, default is used to create a "timestamp" field indicating
         When each document was indexed.
      -->
@@ -366,6 +367,11 @@
         or to add multiple fields to the same field for easier/faster searching.
         Copy fields do not follow transitive property.-->
 
+
+<copyField source="cths_mods_subject_not_lcsh_ms" dest="cths_mods_subject_all_ms"/>
+<copyField source="cths_mods_subject_lcsh_hierarchical_ms" dest="cths_mods_subject_all_ms"/>
+<copyField source="cths_mods_subject_not_lcsh_ms" dest="cths_mods_subject_all_mt"/>
+<copyField source="cths_mods_subject_lcsh_hierarchical_ms" dest="cths_mods_subject_all_mt"/>
 
 <copyField source="*_s" dest="*_mlt"/>
 <copyField source="*_s" dest="*_t"/>
